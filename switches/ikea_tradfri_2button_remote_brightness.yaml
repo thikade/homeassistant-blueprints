@@ -15,7 +15,7 @@ blueprint:
   name: IKEA TRADFRI - 2 Button Remote - OnOff and Brightness
 
   description: >-
-    This automation simulates the use of the IKEA TRADFRI 2-gang on/off dimmer-switch
+    This automation implements the use of the IKEA TRADFRI 2-gang on/off dimmer-switch
     connected through Z2M.
 
   domain: automation
@@ -23,7 +23,7 @@ blueprint:
   input:
     remote:
       name: IKEA TRADFRI remote control
-      description: Select the remote control you wish to use (sensor)
+      description: "Select the remote control you wish to use (sensor)"
       selector:
         device:
           filter:
