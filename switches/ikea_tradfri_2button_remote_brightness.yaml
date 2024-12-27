@@ -10,7 +10,7 @@
 # | off (long)  | Decrease brightness |
 
 blueprint:
-  source_url: https://xxx.yaml
+  source_url: https://github.com/thikade/homeassistant-blueprints/blob/main/switches/ikea_tradfri_2button_remote_brightness.yaml
 
   name: IKEA TRADFRI - 2 Button Remote - OnOff and Brightness
 
