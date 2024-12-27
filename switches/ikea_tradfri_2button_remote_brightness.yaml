@@ -129,8 +129,8 @@ action:
         data:
           title: "Title"
           message: "Message"
-          target:
-            - iphoneXV
+          # target:
+          #   - iphoneXV
           data:
             sound: pianobar
             priority: 0
