@@ -1,4 +1,4 @@
----
+u---
 # This automation simulates the use of the IKEA TRADFRI Dimmer control
 # connected through Z2MQTT.
 
@@ -23,13 +23,13 @@ blueprint:
   input:
     remote:
       name: IKEA TRADFRI remote control
-      description: Select the remote control you wish to use.
+      description: Select the remote control you wish to use (sensor)
       selector:
         device:
           filter:
             - integration: MQTT
               manufacturer: IKEA
-              model: TRADFRI 2-gang on/off switch
+              # model: TRADFRI 2-gang on/off switch
     light:
       name: Light
       description: Select the light entity you wish to control.
@@ -57,16 +57,16 @@ variables:
 
 trigger:
   - platform: event
-    event_type: zha_event
+    event_type: state_changed
     event_data:
-      device_id: !input remote
+      entity_id: !input remote
 
 action:
   - choose:
       # Short-Press the on button
       - conditions:
           - condition: template
-            value_template: '{{ trigger.event.data.command == "on" }}'
+            value_template: '{{ trigger.event.data.old_state.state == "on" }}'
         sequence:
           - service: light.turn_on
             target:
@@ -98,7 +98,7 @@ action:
       # Short-Press the off button
       - conditions:
           - condition: template
-            value_template: '{{ trigger.event.data.command == "off" }}'
+            value_template: '{{ trigger.event.data.old_state.state == "off" }}'
         sequence:
           - service: light.turn_off
             target:
