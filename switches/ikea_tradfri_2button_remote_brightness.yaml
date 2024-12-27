@@ -130,7 +130,7 @@ action:
           title: "Title"
           message: |
             Message
-            {{ trigger.event.data }}
+            {{ trigger.event.data | default('trigger N/A') }}
           # target:
           #   - iphoneXV
           data:
