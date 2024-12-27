@@ -125,7 +125,7 @@ action:
                     milliseconds: !input speed
 
     default:
-      - action: notify.entity_id
+      - action: notify.pushover
         data:
           title: "Title"
           message: "Message"
