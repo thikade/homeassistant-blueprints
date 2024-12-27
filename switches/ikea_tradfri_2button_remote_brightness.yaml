@@ -124,5 +124,14 @@ action:
                 - delay:
                     milliseconds: !input speed
 
-    # Any other event will cancel the repeat loops (i.e. releasing the [on|off] button)
-    default: []
+    default:
+      - action: notify.entity_id
+        data:
+          title: "Title"
+          message: "Message"
+          target:
+            - iphoneXV
+          data:
+            sound: pianobar
+            priority: 0
+
