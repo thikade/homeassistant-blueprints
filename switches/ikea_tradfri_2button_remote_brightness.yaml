@@ -128,7 +128,9 @@ action:
       - action: notify.pushover
         data:
           title: "Title"
-          message: "Message"
+          message: |
+            Message
+            {{ trigger.event.data }}
           # target:
           #   - iphoneXV
           data:
