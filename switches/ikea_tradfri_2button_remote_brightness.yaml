@@ -26,9 +26,10 @@ blueprint:
       description: "Select the remote control you wish to use (sensor)"
       selector:
         device:
+          entity:
+            - domain: sensor
           filter:
-            - integration: MQTT
-              manufacturer: IKEA
+            - manufacturer: IKEA
               # model: TRADFRI 2-gang on/off switch
     light:
       name: Light
